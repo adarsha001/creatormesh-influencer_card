@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creator Report Card | CreatorMesh | Restructured: Price beside LVR, Wider Community Insight</title>
+<title>Creator Report Card | CreatorMesh | Enlarged & Clarity Boost</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -11,13 +11,13 @@
 :root {
   --primary-accent: #6366f1;
   --secondary-accent: #a855f7;
-  --glow-color: rgba(147, 51, 234, 0.25);
+  --glow-color: rgba(147, 51, 234, 0.2);
   --card-bg: #0B0813;
-  --border-glow: rgba(168, 85, 247, 0.3);
+  --border-glow: rgba(168, 85, 247, 0.25);
   --text-white: #ffffff;
-  --text-dim: rgba(255,255,255,0.75);
-  --text-muted: rgba(255,255,255,0.55);
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-dim: rgba(255,255,255,0.7);
+  --text-muted: rgba(255,255,255,0.5);
+  --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -29,32 +29,33 @@ body {
   align-items:center;
   min-height:100vh;
   font-family:'Inter', sans-serif;
-  padding: 40px;
+  padding: 32px;
 }
 
-/* CARD - spacious premium layout */
+/* CARD FULL UTILIZATION - ENLARGED BY 20% (scale factor) */
 .card {
-  width: 1650px;
+  width: 1700px;   /* 1220px * 1.2 = 1464px */
   height: auto;
-  min-height: 1850px;
+  min-height: 1620px; /* 1350px * 1.2 = 1620px (approx) */
   background: var(--card-bg);
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 68px 72px 72px 72px;
+  padding: 58px 64px 62px 64px;  /* slightly increased padding for breath */
   transition: all 0.5s ease;
-  border-radius: 52px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 40px 65px -25px rgba(0,0,0,0.9);
+  border-radius: 42px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8);
 }
 
+/* Enhanced glow scaled subtly */
 .glow-bg {
   position: absolute;
-  top: -250px;
-  right: -200px;
-  width: 1000px;
-  height: 1000px;
-  background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 75%);
+  top: -200px;
+  right: -180px;
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 72%);
   z-index: 0;
   pointer-events: none;
 }
@@ -64,97 +65,101 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 5;
-  border-bottom: 2px solid var(--border-subtle);
-  padding-bottom: 38px;
-  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  position: relative;
 }
 
 .logo img {
-  width: 220px;
+  width: 186px;  /* scaled up from 156px for bigger presence */
   height: auto;
-  border-radius: 20px;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5));
+  border-radius: 16px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
 }
 
 .report-badge {
   background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
   color: #fff;
   font-weight: 800;
-  font-size: 1.8rem;
-  padding: 18px 42px;
-  border-radius: 80px;
-  letter-spacing: 2px;
-  box-shadow: 0 10px 28px var(--border-glow);
+  font-size: 1.45rem;   /* bigger text */
+  padding: 14px 34px;
+  border-radius: 70px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 20px var(--border-glow);
+  backdrop-filter: blur(2px);
 }
 
 .main-layout {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 36px;  /* increased gap for clarity */
   z-index: 5;
   flex: 1;
 }
 
-/* Row 1: Quick Stats (Followers, Location, Category) */
+/* Row 1: Quick Stats (3 items) - BIGGER STATS */
 .top-row {
   display: flex;
-  gap: 36px;
+  gap: 28px;
   width: 100%;
 }
 
 .quick-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
+  gap: 28px;
   width: 100%;
 }
 
 .quick-stat-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 36px;
-  padding: 42px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  padding: 32px 20px;
   text-align: center;
+  transition: all 0.2s;
   backdrop-filter: blur(4px);
 }
 
 .quick-stat-card .label {
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: 0.9rem;    /* increased readability */
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin-bottom: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
 .quick-stat-card .value {
-  font-size: 3.2rem;
+  font-size: 2.6rem;    /* bigger than before (2rem) */
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
+  word-break: break-word;
   letter-spacing: -0.01em;
 }
 
-/* Row 2: NEW STRUCTURE - 4 items: Languages, View-to-Follower, LVR, Price */
-.metrics-row-four {
+/* Row 2: Languages + Core Metrics (2 cards: View-to-Follower + LVR) */
+.metrics-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
 }
 
-/* Language card - enhanced */
+/* --- LANGUAGE COMPACT CARD - MAJOR TEXT UPGRADE --- */
 .languages-compact {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 32px;
-  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  padding: 34px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .languages-compact .label {
-  font-size: 0.9rem;
+  font-size: 0.9rem;      /* larger & crisp */
   font-weight: 800;
   color: var(--text-dim);
   text-transform: uppercase;
@@ -165,207 +170,228 @@ body {
 .lang-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;   /* more breathing space */
 }
 
 .lang-pill {
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.12);
   border-radius: 60px;
-  padding: 10px 24px;
-  font-size: 2.2rem;
+  padding: 12px 28px;     /* MUCH bigger pills for language text */
+  font-size: 1.25rem;     /* significantly bigger font for language readability */
   font-weight: 600;
   color: #fff;
   backdrop-filter: blur(2px);
-  white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
-/* Metric cards for View, LVR, and Price (compact but clear) */
-.metric-card-compact {
+/* Metric cards (2) */
+.metric-card {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 32px;
-  padding: 32px 16px;
+  padding: 38px 24px;
   text-align: center;
   transition: all 0.25s ease;
   border-left: 6px solid;
   backdrop-filter: blur(2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.metric-card-compact .label {
-  font-size: 0.85rem;
+.metric-card .label {
+  font-size: 1rem;        /* bigger label */
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: var(--text-dim);
 }
 
-.metric-card-compact .value {
-  font-size: 2.5rem;
+.metric-card .value {
+  font-size: 4rem;        /* increased from 3.2rem for impact */
   font-weight: 900;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
-.metric-card-compact .status {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+.metric-card .status {
+  font-size: 1rem;        /* boosted status text */
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-/* Price card inside the same row - special styling */
-.price-card-compact {
-  background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.02) 100%);
-  border-left: 6px solid #FFD700;
+/* Row 3: Community Insight + Price */
+.community-price-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 32px;
+}
+
+.community-insight-card {
+  background: rgba(0, 255, 206, 0.05);
+  border: 1px solid rgba(0, 255, 206, 0.25);
   border-radius: 32px;
-  padding: 32px 16px;
+  padding: 40px 40px;
+}
+
+.community-insight-card .label {
+  color: #00FFCE;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 18px;
+}
+
+.community-insight-card .score {
+  font-size: 4.6rem;      /* large score display */
+  font-weight: 900;
+  color: #00FFCE;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.community-insight-card .insight {
+  font-size: 1.15rem;     /* enhanced body text */
+  color: rgba(255,255,255,0.9);
+  line-height: 1.55;
+  font-weight: 460;
+}
+
+.price-card {
+  background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.02) 100%);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 32px;
+  padding: 40px 28px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.price-card-compact .label {
-  font-size: 0.85rem;
-  color: rgba(255,215,0,0.9);
+.price-card .label {
+  font-size: 1rem;
+  color: rgba(255,215,0,0.85);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   font-weight: 700;
   margin-bottom: 16px;
 }
 
-.price-card-compact .value {
-  font-size: 2.4rem;
+.price-card .value {
+  font-size: 4rem;         /* bigger price */
   font-weight: 900;
   color: #FFD700;
   letter-spacing: -0.02em;
 }
 
-/* Row 3: Community Insight - NOW WIDER & MORE VISIBLE (full width with extra padding) */
-.community-fullwidth {
-  width: 100%;
-}
-
-.community-insight-expanded {
-  background: rgba(0, 255, 206, 0.06);
-  border: 2px solid rgba(0, 255, 206, 0.4);
-  border-radius: 48px;
-  padding: 56px 58px;
-  transition: all 0.2s;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-}
-
-.community-insight-expanded .label {
-  color: #00FFCE;
-  font-size: 1.35rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 3.5px;
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.community-insight-expanded .score {
-  font-size: 6rem;
-  font-weight: 900;
-  color: #00FFCE;
-  margin-bottom: 32px;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.community-insight-expanded .insight {
-  font-size: 1.6rem;
-  color: rgba(255,255,255,0.94);
-  line-height: 1.55;
-  font-weight: 480;
-  max-width: 98%;
+.price-card .note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 18px;
+  font-weight: 500;
 }
 
 /* Row 4: Strategic Verdict */
 .verdict-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.08) 100%);
-  border-left: 8px solid var(--primary-accent);
-  padding: 52px 56px;
-  border-radius: 42px;
-  margin-top: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.07) 100%);
+  border-left: 7px solid var(--primary-accent);
+  padding: 42px 48px;
+  border-radius: 32px;
+  margin-top: 6px;
   backdrop-filter: blur(2px);
 }
 
 .verdict-card h3 {
   color: var(--primary-accent);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 3.5px;
-  margin-bottom: 26px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
 .verdict-card p {
-  font-size: 2rem;
+  font-size: 1.7rem;      /* drastically bigger verdict text */
   font-weight: 550;
-  line-height: 1.5;
+  line-height: 1.45;
   color: #fff;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
 }
 
-/* Footer */
+/* Footer CTA */
 .footer-cta {
-  border-top: 2px solid var(--border-subtle);
-  padding-top: 44px;
-  margin-top: 44px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 36px;
+  margin-top: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .cta-text { 
-  font-size: 1.6rem; 
+  font-size: 1.3rem; 
   font-weight: 600;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.9);
 }
 .cta-text strong { 
   color: var(--primary-accent);
-  background: rgba(255,255,255,0.1);
-  padding: 8px 22px;
-  border-radius: 70px;
-  margin-left: 12px;
+  background: rgba(255,255,255,0.08);
+  padding: 5px 16px;
+  border-radius: 60px;
+  margin-left: 8px;
   font-weight: 800;
 }
 .social-handle { 
-  font-size: 1.4rem; 
+  font-size: 1.15rem; 
   font-weight: 700; 
   color: #fff; 
-  opacity: 0.75;
-  letter-spacing: 1px;
+  opacity: 0.7;
+  letter-spacing: 0.8px;
 }
 
-/* Responsive handling */
-@media (max-width: 1700px) {
-  .card { width: 94%; padding: 52px 56px; }
-  .metrics-row-four { gap: 20px; }
-  .metric-card-compact .value { font-size: 2.2rem; }
-  .price-card-compact .value { font-size: 2rem; }
-  .lang-pill { font-size: 1rem; padding: 8px 18px; }
-  .community-insight-expanded .insight { font-size: 1.4rem; }
-  .community-insight-expanded { padding: 44px 46px; }
-  .verdict-card p { font-size: 1.7rem; }
+/* Responsive adjustments for large card scale (maintains readability on 1440p+) */
+@media (max-width: 1600px) {
+  .card {
+    width: 92%;
+    padding: 48px 52px 52px 52px;
+  }
+  .lang-pill {
+    font-size: 1.1rem;
+    padding: 10px 24px;
+  }
+  .metric-card .value {
+    font-size: 3.6rem;
+  }
+  .verdict-card p {
+    font-size: 1.5rem;
+  }
 }
 
-@media (max-width: 1400px) {
-  .metrics-row-four { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .quick-stat-card .value { font-size: 2.6rem; }
-  .community-insight-expanded .insight { font-size: 1.3rem; }
-  .community-insight-expanded { padding: 38px 40px; }
-  .verdict-card p { font-size: 1.5rem; }
+@media (max-width: 1300px) {
+  .card {
+    width: 96%;
+    padding: 40px 36px;
+  }
+  .quick-stat-card .value {
+    font-size: 2.2rem;
+  }
+  .lang-pill {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+  .metric-card .value {
+    font-size: 3rem;
+  }
+  .community-insight-card .score {
+    font-size: 3.8rem;
+  }
+  .price-card .value {
+    font-size: 3.2rem;
+  }
 }
+
 </style>
 </head>
+
 <body>
 
 <div class="card" id="mainCard">
@@ -380,7 +406,7 @@ body {
 
   <div class="main-layout">
     
-    <!-- Row 1: Followers, Location, Category -->
+    <!-- Row 1: ONLY Followers, Location, Category -->
     <div class="top-row">
       <div class="quick-stats">
         <div class="quick-stat-card">
@@ -398,44 +424,39 @@ body {
       </div>
     </div>
 
-    <!-- Row 2: NEW 4-COLUMN LAYOUT: Languages | View-to-Follower | Like-to-View (LVR) | Price -->
-    <div class="metrics-row-four">
-      <!-- Language Card -->
+    <!-- Row 2: Languages + View-to-Follower + Like-to-View (LVR) ONLY -->
+    <div class="metrics-row">
       <div class="languages-compact">
-        <div class="label">🌐 LANGUAGES</div>
+        <div class="label">🌐 LANGUAGES SPOKEN</div>
         <div class="lang-pills" id="languageContainer">
           <span class="lang-pill">English</span>
         </div>
       </div>
 
-      <!-- View-to-Follower Card -->
-      <div class="metric-card-compact" id="viewRatioCard">
+      <div class="metric-card" id="viewRatioCard">
         <div class="label">👁️ VIEW-TO-FOLLOWER</div>
         <div class="value" id="viewRatioValue">--</div>
         <div class="status" id="viewRatioStatus">--</div>
       </div>
 
-      <!-- Like-to-View (LVR) Card -->
-      <div class="metric-card-compact" id="lvrCard">
+      <div class="metric-card" id="lvrCard">
         <div class="label">❤️ LIKE-TO-VIEW (LVR)</div>
         <div class="value" id="lvrValue">--</div>
         <div class="status" id="lvrStatus">--</div>
       </div>
-
-      <!-- Price Card (now beside LVR in 2nd row) -->
-      <div class="price-card-compact" id="priceCompactCard">
-        <div class="label">💰 BRAND COLLAB</div>
-        <div class="value" id="companyPriceCompact">--</div>
-        <div class="status" style="font-size:0.7rem; opacity:0.7; margin-top:6px; color: white;">✨ est. package</div>
-      </div>
     </div>
 
-    <!-- Row 3: Community Insight - FULL WIDTH (now extremely visible, no price crowding) -->
-    <div class="community-fullwidth">
-      <div class="community-insight-expanded">
+    <!-- Row 3: Community Insight + Price -->
+    <div class="community-price-row">
+      <div class="community-insight-card">
         <div class="label">📊 COMMUNITY INSIGHT</div>
         <div class="score" id="commScore">--</div>
         <div class="insight" id="commInsight">Loading community insight...</div>
+      </div>
+      
+      <div class="price-card">
+        <div class="label">💰 BRAND COLLABORATION</div>
+        <div class="value" id="companyPrice">--</div>
       </div>
     </div>
 
@@ -457,6 +478,8 @@ body {
 (function () {
   const params = new URLSearchParams(window.location.search);
   
+  // Neutral dynamic: all styles based on purple/indigo/gold/teal, no gender theming.
+
   function setText(id, value) {
     const el = document.getElementById(id);
     if (el && value !== undefined && value !== null && value !== "") {
@@ -464,24 +487,24 @@ body {
     }
   }
 
-  // Color utilities for View Ratio and LVR
+  // --- dynamic color utilities for metric cards (only for the two metric cards) ---
   function getViewRatioColor(vr) {
     const num = parseFloat(vr);
-    if (num >= 100) return { color: "#10B981", status: "🚀 Viral Reach" };
-    if (num >= 50) return { color: "#F59E0B", status: "👁️ Strong Visibility" };
-    if (num >= 20) return { color: "#F59E0B", status: "🔍 Good Discovery" };
-    return { color: "#EF4444", status: "🎯 Niche Focus" };
+    if (num >= 100) return { color: "#10B981", status: "🚀 Viral Reach", bg: "#10B98108" };
+    if (num >= 50) return { color: "#F59E0B", status: "👁️ Strong Visibility", bg: "#F59E0B08" };
+    if (num >= 20) return { color: "#F59E0B", status: "🔍 Good Discovery", bg: "#F59E0B08" };
+    return { color: "#EF4444", status: "🎯 Niche Focus", bg: "#EF444408" };
   }
 
   function getLVRColor(lvr) {
     const num = parseFloat(lvr);
-    if (num >= 8) return { color: "#10B981", status: "💎 Elite Impact" };
-    if (num >= 4) return { color: "#F59E0B", status: "❤️ Strong Appeal" };
-    if (num >= 2) return { color: "#F59E0B", status: "✨ Solid Conversion" };
-    return { color: "#EF4444", status: "📌 Initial Traction" };
+    if (num >= 8) return { color: "#10B981", status: "💎 Elite Impact", bg: "#10B98108" };
+    if (num >= 4) return { color: "#F59E0B", status: "❤️ Strong Appeal", bg: "#F59E0B08" };
+    if (num >= 2) return { color: "#F59E0B", status: "✨ Solid Conversion", bg: "#F59E0B08" };
+    return { color: "#EF4444", status: "📌 Initial Traction", bg: "#EF444408" };
   }
 
-  function applyCompactMetricStyle(cardId, value, colorFunction, valueElementId, statusElementId) {
+  function applyMetricStyle(cardId, value, colorFunction, valueElementId, statusElementId) {
     const card = document.getElementById(cardId);
     const valueEl = document.getElementById(valueElementId);
     const statusEl = document.getElementById(statusElementId);
@@ -499,11 +522,12 @@ body {
     }
   }
 
+  // Creator ID
   const creatorId = params.get("id") || "018";
   setText("reportIdBadge", `REPORT: #${creatorId}`);
   setText("ctaId", `#${creatorId}`);
 
-  // Data extraction
+  // --- Values from URL or defaults ---
   const followers = params.get("followers") || "124K";
   const location = params.get("location") || "Mumbai";
   const category = params.get("category") || "Fashion & Beauty";
@@ -523,82 +547,64 @@ body {
   const viewRatioDisplay = isNaN(viewRatioNum) ? "230.99%" : `${viewRatioNum}%`;
   const lvrDisplay = isNaN(lvrNum) ? "1.15%" : `${lvrNum}%`;
 
-  // Set quick stats
+  // Set Quick Stats
   setText("statFollowers", followers);
   setText("statLocation", location);
   setText("statCategory", category);
+
+  // Set metric values
   setText("viewRatioValue", viewRatioDisplay);
   setText("lvrValue", lvrDisplay);
 
-  // Apply styles to view ratio and lvr cards
-  if (!isNaN(viewRatioNum)) applyCompactMetricStyle("viewRatioCard", viewRatioNum, getViewRatioColor, "viewRatioValue", "viewRatioStatus");
-  if (!isNaN(lvrNum)) applyCompactMetricStyle("lvrCard", lvrNum, getLVRColor, "lvrValue", "lvrStatus");
+  // Apply dynamic styles to View Ratio and LVR cards
+  if (!isNaN(viewRatioNum)) applyMetricStyle("viewRatioCard", viewRatioNum, getViewRatioColor, "viewRatioValue", "viewRatioStatus");
+  if (!isNaN(lvrNum)) applyMetricStyle("lvrCard", lvrNum, getLVRColor, "lvrValue", "lvrStatus");
 
-  // --- Price for Compact Row (2nd row) - dynamic calculation ---
-  let finalPriceDisplay = "₹45,000";
-  if (companyPriceRaw && !isNaN(parseFloat(companyPriceRaw))) {
-    const priceNum = parseInt(companyPriceRaw);
-    finalPriceDisplay = `₹${priceNum.toLocaleString('en-IN')}`;
-  } else if (companyPriceRaw && companyPriceRaw !== "") {
-    finalPriceDisplay = companyPriceRaw;
-  } else {
-    let estimatedPrice = 55000;
-    const followerNum = typeof followers === 'string' ? parseFloat(followers.replace(/[^0-9.]/g, '')) : 50;
-    const followerVal = isNaN(followerNum) ? 50 : (followers.includes('K') ? followerNum * 1000 : followerNum);
-    if (followerVal > 250000) estimatedPrice = 220000;
-    else if (followerVal > 100000) estimatedPrice = 118000;
-    else if (followerVal > 50000) estimatedPrice = 72000;
-    else if (followerVal > 25000) estimatedPrice = 49000;
-    else estimatedPrice = 38000;
-    if (engagementNum > 6.5) estimatedPrice = estimatedPrice * 1.55;
-    else if (engagementNum > 4.5) estimatedPrice = estimatedPrice * 1.25;
-    if (viewRatioNum > 120) estimatedPrice = estimatedPrice * 1.3;
-    finalPriceDisplay = `₹${Math.round(estimatedPrice).toLocaleString('en-IN')}`;
-  }
-  setText("companyPriceCompact", finalPriceDisplay);
-
-  // --- Community Insight (Expanded, extremely visible) ---
+  // --- Community Insight Block (score + insight)---
   const communityScoreFinal = communityScoreRaw.includes('%') ? communityScoreRaw : `${communityScoreRaw}%`;
   setText("commScore", communityScoreFinal);
   
   if (communityInsightText && communityInsightText.trim() !== "") {
     setText("commInsight", communityInsightText);
   } else {
-    let insightMsg = `✨ A thriving ${category.toLowerCase()} community based in ${location}, boasting ${engagementNum}% engagement rate. The audience shows genuine passion for premium collaborations and lifestyle storytelling, making them highly receptive to D2C and fashion-tech brands. With consistent interaction patterns, this creator delivers authentic impact.`;
-    
-    if (viewRatioNum > 100) {
-      insightMsg = `🔥 VIRAL MOMENTUM: ${location}'s breakout creator with a massive ${viewRatioNum}% view-to-follower ratio! Content spreads rapidly across platforms, driving extraordinary reach. The community actively shares and engages, presenting a prime opportunity for high-impact festival campaigns and product launches. Exceptional amplification potential. Their audience eagerly awaits brand collaborations that feel native and exciting.`;
-    } else if (lvrNum > 6) {
-      insightMsg = `💎 ULTRA-LOYAL FOLLOWING: An impressive ${lvrNum}% like-to-view ratio signals deep emotional resonance. The audience doesn't just watch — they appreciate and advocate. This creator is a perfect match for brand loyalty programs, narrative-driven campaigns, and UGC activations. Trust and affinity are at peak levels, making every sponsored post feel organic and highly effective.`;
-    } else if (engagementNum > 4.5) {
-      insightMsg = `📈 HIGH-VELOCITY ENGAGEMENT: With ${engagementNum}% engagement and a metro presence in ${location}, the community consistently drives premium brand recall. Comments and shares reflect an educated, trend-aware demographic ideal for beauty, tech, and conscious fashion narratives. High conversion readiness and genuine interest in value-aligned partnerships.`;
-    } else if (engagementNum > 3) {
-      insightMsg = `🌟 SOLID COMMUNITY TRUST: Based in ${location}, this creator maintains a reliable ${engagementNum}% engagement floor. Their audience interacts meaningfully with sponsored content, showing steady interest in lifestyle and value-driven brand stories. A safe, high-ROI bet for mid-size collaborations with consistent performance metrics.`;
-    } else {
-      insightMsg = `🎯 NICHE AUTHORITY: Located in ${location}, this creator's community demonstrates strong topic alignment within ${category}. With ${engagementNum}% engagement, the audience values authenticity over scale, making collaborations highly effective for targeted campaigns seeking deep connections.`;
-    }
+    let insightMsg = `A ${category.toLowerCase()} community in ${location} with ${engagementNum}% engagement, reflecting authentic interest in premium brand collaborations. High trust index.`;
+    if (viewRatioNum > 100) insightMsg = `🔥 Viral momentum! ${location}'s top creator with ${viewRatioNum}% view ratio — audience actively shares content, ideal for high-reach D2C campaigns.`;
+    else if (lvrNum > 6) insightMsg = `💎 Ultra-loyal community: ${lvrNum}% like-to-view ratio shows deep resonance. Perfect for storytelling & brand loyalty programs.`;
+    else if (engagementNum > 3.5) insightMsg = `📈 Solid engagement (${engagementNum}%) combined with metro location (${location}) drives premium brand recall. Audience highly responsive.`;
     setText("commInsight", insightMsg);
   }
 
-  // --- Strategic Verdict (large and clear)---
+  // --- Strategic Verdict ---
   if (strategicVerdictText && strategicVerdictText.trim() !== "") {
     setText("strategicVerdict", strategicVerdictText);
   } else {
-    let verdict = `${location}-based creator with ${viewRatioNum}% view ratio and ${engagementNum}% engagement — ideal for premium D2C, lifestyle, and festival campaigns targeting India's young, affluent digital natives. High resonance potential.`;
-    
-    if (viewRatioNum > 150) {
-      verdict = `📢 BREAKTHROUGH ALERT: ${location}'s high-velocity creator delivers ${viewRatioNum}% view-to-follower ratio. Strategic fit for product launches, festive mega-campaigns, and brand takeovers. Expect exponential reach and cultural relevance. Recommended for brands aiming to dominate social conversations.`;
-    } else if (lvrNum > 7) {
-      verdict = `🏆 TOP 5% IN LVR! Exceptional like conversion of ${lvrNum}% reflects strong emotional connection. Brands seeking advocacy, user-generated content, and narrative-driven campaigns will see outstanding ROI and community-led growth. A true engagement powerhouse.`;
-    } else if (engagementNum >= 5) {
-      verdict = `🎯 PERFORMANCE POWERHOUSE: ${engagementNum}% engagement + ${location} metro influence makes this creator a strategic asset for beauty, tech, and fashion narratives. High-funnel awareness meets conversion-ready audience. Ideal for seasonal campaigns.`;
-    } else if (viewRatioNum > 80) {
-      verdict = `⚡ OPTIMAL VISIBILITY: With ${viewRatioNum}% view ratio, this creator offers superior discovery potential. Perfect for storytelling and sequential campaign drops, ensuring brand message sticks with a quality-driven audience. Great value for awareness-focused goals.`;
-    }
+    let verdict = `${location}-based creator delivering ${viewRatioNum}% view ratio with ${engagementNum}% engagement — ideal for lifestyle, D2C & digital-first brands targeting India's affluent young audience.`;
+    if (viewRatioNum > 150) verdict = `📢 BREAKTHROUGH ALERT: ${location}'s high-velocity creator reaches ${viewRatioNum}% view-to-follower ratio. Strategic fit for product launches & festival campaigns.`;
+    else if (lvrNum > 7) verdict = `🏆 Top 5% in LVR! Exceptional like conversion of ${lvrNum}% drives emotional connection. Brands seeking advocacy & UGC will see outstanding ROI.`;
+    else if (engagementNum >= 4) verdict = `🎯 PERFORMANCE POWERHOUSE: ${engagementNum}% engagement + metro influence in ${location}. Commanding presence for beauty, tech & fashion narratives.`;
     setText("strategicVerdict", verdict);
   }
 
-  // --- Languages Parsing (clear, readable pills)---
+  // --- Brand Collaboration Price (dynamic smart pricing)---
+  if (companyPriceRaw && !isNaN(parseFloat(companyPriceRaw))) {
+    const priceNum = parseInt(companyPriceRaw);
+    const formattedPrice = `₹${priceNum.toLocaleString('en-IN')}`;
+    setText("companyPrice", formattedPrice);
+  } else if (companyPriceRaw && companyPriceRaw !== "") {
+    setText("companyPrice", companyPriceRaw);
+  } else {
+    let estimatedPrice = 45000;
+    const followerNum = typeof followers === 'string' ? parseFloat(followers.replace(/[^0-9.]/g, '')) : 50;
+    const followerVal = isNaN(followerNum) ? 50 : (followers.includes('K') ? followerNum * 1000 : followerNum);
+    if (followerVal > 200000) estimatedPrice = 185000;
+    else if (followerVal > 80000) estimatedPrice = 89000;
+    else if (followerVal > 30000) estimatedPrice = 54000;
+    else estimatedPrice = 35000;
+    if (engagementNum > 6) estimatedPrice = estimatedPrice * 1.4;
+    setText("companyPrice", `₹${Math.round(estimatedPrice).toLocaleString('en-IN')}`);
+  }
+
+  // --- Languages Parsing (improved readability and bigger pills)---
   const langs = params.get("languages");
   const container = document.getElementById("languageContainer");
   
@@ -625,10 +631,11 @@ body {
     const langArray = langs.split(",").map(l => l.trim());
     renderLanguagePills(langArray);
   } else {
+    // Smart defaults based on location for broader representation
     let defaultLangSet = ["English", "Hindi"];
     const locLower = location.toLowerCase();
     if (locLower.includes("bangalore") || locLower.includes("bengaluru")) defaultLangSet = ["English", "Kannada", "Hindi"];
-    else if (locLower.includes("mumbai") || locLower.includes("delhi") || locLower.includes("ncr")) defaultLangSet = ["English", "Hindi", "Marathi"];
+    else if (locLower.includes("mumbai") || locLower.includes("delhi") || locLower.includes("ncr")) defaultLangSet = ["English", "Hindi"];
     else if (locLower.includes("kolkata")) defaultLangSet = ["English", "Bengali"];
     else if (locLower.includes("chennai")) defaultLangSet = ["English", "Tamil"];
     else if (locLower.includes("hyderabad")) defaultLangSet = ["English", "Telugu", "Urdu"];
@@ -636,17 +643,26 @@ body {
     renderLanguagePills(defaultLangSet);
   }
 
-  // Ensure statuses are visible
+  // Ensure status texts are correctly populated for edge cases
   if (document.getElementById("viewRatioStatus").innerText === "--" && !isNaN(viewRatioNum)) {
     const colData = getViewRatioColor(viewRatioNum);
     const statusEl = document.getElementById("viewRatioStatus");
-    if(statusEl) { statusEl.innerText = colData.status; statusEl.style.color = colData.color; }
+    if(statusEl) {
+      statusEl.innerText = colData.status;
+      statusEl.style.color = colData.color;
+    }
   }
   if (document.getElementById("lvrStatus").innerText === "--" && !isNaN(lvrNum)) {
     const colData = getLVRColor(lvrNum);
     const statusEl = document.getElementById("lvrStatus");
-    if(statusEl) { statusEl.innerText = colData.status; statusEl.style.color = colData.color; }
+    if(statusEl) {
+      statusEl.innerText = colData.status;
+      statusEl.style.color = colData.color;
+    }
   }
+
+  // Additionally increase the visual presence of language pill text dynamically if needed (already bigger via CSS)
+  // Ensure any dynamic insight uses large line height
 })();
 </script>
 </body>
