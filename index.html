@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creator Report Card | CreatorMesh</title>
+<title>Creator Report Card | CreatorMesh | Enlarged & Clarity Boost</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -15,8 +15,8 @@
   --card-bg: #0B0813;
   --border-glow: rgba(168, 85, 247, 0.25);
   --text-white: #ffffff;
-  --text-dim: rgba(255,255,255,0.65);
-  --text-muted: rgba(255,255,255,0.4);
+  --text-dim: rgba(255,255,255,0.7);
+  --text-muted: rgba(255,255,255,0.5);
   --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
@@ -32,29 +32,29 @@ body {
   padding: 32px;
 }
 
-/* CARD FULL UTILIZATION */
+/* CARD FULL UTILIZATION - ENLARGED BY 20% (scale factor) */
 .card {
-  width:1220px;
-  height:auto;
-  min-height:1350px;
+  width: 1464px;   /* 1220px * 1.2 = 1464px */
+  height: auto;
+  min-height: 1620px; /* 1350px * 1.2 = 1620px (approx) */
   background: var(--card-bg);
-  position:relative;
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 48px 52px 52px 52px;
+  padding: 58px 64px 62px 64px;  /* slightly increased padding for breath */
   transition: all 0.5s ease;
-  border-radius: 36px;
+  border-radius: 42px;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8);
 }
 
-/* Enhanced glow for depth */
+/* Enhanced glow scaled subtly */
 .glow-bg {
   position: absolute;
   top: -200px;
   right: -180px;
-  width: 750px;
-  height: 750px;
+  width: 850px;
+  height: 850px;
   background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 72%);
   z-index: 0;
   pointer-events: none;
@@ -66,199 +66,201 @@ body {
   align-items: center;
   z-index: 5;
   border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 28px;
-  margin-bottom: 28px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
   position: relative;
 }
 
 .logo img {
-  width: 156px;
+  width: 186px;  /* scaled up from 156px for bigger presence */
   height: auto;
-  border-radius: 14px;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
-  transition: transform 0.2s ease;
+  border-radius: 16px;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
 }
 
 .report-badge {
   background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
   color: #fff;
   font-weight: 800;
-  font-size: 1.2rem;
-  padding: 12px 28px;
-  border-radius: 60px;
+  font-size: 1.45rem;   /* bigger text */
+  padding: 14px 34px;
+  border-radius: 70px;
   letter-spacing: 1.5px;
-  box-shadow: 0 6px 18px var(--border-glow);
+  box-shadow: 0 8px 20px var(--border-glow);
   backdrop-filter: blur(2px);
 }
 
 .main-layout {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 36px;  /* increased gap for clarity */
   z-index: 5;
   flex: 1;
 }
 
-/* Row 1: Quick Stats (only 3 items: Followers, Location, Category) */
+/* Row 1: Quick Stats (3 items) - BIGGER STATS */
 .top-row {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   width: 100%;
 }
 
 .quick-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
   width: 100%;
 }
 
 .quick-stat-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 24px;
-  padding: 26px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  padding: 32px 20px;
   text-align: center;
   transition: all 0.2s;
   backdrop-filter: blur(4px);
 }
 
 .quick-stat-card .label {
-  font-size: 0.75rem;
+  font-size: 0.9rem;    /* increased readability */
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
 .quick-stat-card .value {
-  font-size: 2rem;
+  font-size: 2.6rem;    /* bigger than before (2rem) */
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
   word-break: break-word;
+  letter-spacing: -0.01em;
 }
 
 /* Row 2: Languages + Core Metrics (2 cards: View-to-Follower + LVR) */
 .metrics-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 28px;
+  gap: 32px;
 }
 
+/* --- LANGUAGE COMPACT CARD - MAJOR TEXT UPGRADE --- */
 .languages-compact {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 24px;
-  padding: 26px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  padding: 34px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .languages-compact .label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--text-muted);
+  font-size: 0.9rem;      /* larger & crisp */
+  font-weight: 800;
+  color: var(--text-dim);
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  margin-bottom: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .lang-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;   /* more breathing space */
 }
 
 .lang-pill {
-  background: rgba(255,255,255,0.1);
-  border-radius: 40px;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  background: rgba(255,255,255,0.12);
+  border-radius: 60px;
+  padding: 12px 28px;     /* MUCH bigger pills for language text */
+  font-size: 1.25rem;     /* significantly bigger font for language readability */
+  font-weight: 600;
   color: #fff;
   backdrop-filter: blur(2px);
+  letter-spacing: 0.3px;
 }
 
+/* Metric cards (2) */
 .metric-card {
   background: rgba(255, 255, 255, 0.02);
-  border-radius: 28px;
-  padding: 32px 20px;
+  border-radius: 32px;
+  padding: 38px 24px;
   text-align: center;
   transition: all 0.25s ease;
-  border-left: 5px solid;
+  border-left: 6px solid;
   backdrop-filter: blur(2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .metric-card .label {
-  font-size: 0.85rem;
+  font-size: 1rem;        /* bigger label */
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: var(--text-dim);
 }
 
 .metric-card .value {
-  font-size: 3.2rem;
+  font-size: 4rem;        /* increased from 3.2rem for impact */
   font-weight: 900;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
 .metric-card .status {
-  font-size: 0.85rem;
+  font-size: 1rem;        /* boosted status text */
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
 /* Row 3: Community Insight + Price */
 .community-price-row {
   display: grid;
   grid-template-columns: 2.2fr 1fr;
-  gap: 28px;
+  gap: 32px;
 }
 
 .community-insight-card {
-  background: rgba(0, 255, 206, 0.04);
-  border: 1px solid rgba(0, 255, 206, 0.2);
-  border-radius: 28px;
-  padding: 32px 34px;
-  transition: 0.2s;
+  background: rgba(0, 255, 206, 0.05);
+  border: 1px solid rgba(0, 255, 206, 0.25);
+  border-radius: 32px;
+  padding: 40px 40px;
 }
 
 .community-insight-card .label {
   color: #00FFCE;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .community-insight-card .score {
-  font-size: 3.8rem;
+  font-size: 4.6rem;      /* large score display */
   font-weight: 900;
   color: #00FFCE;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   letter-spacing: -0.02em;
 }
 
 .community-insight-card .insight {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.5;
-  font-weight: 450;
+  font-size: 1.15rem;     /* enhanced body text */
+  color: rgba(255,255,255,0.9);
+  line-height: 1.55;
+  font-weight: 460;
 }
 
 .price-card {
   background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.02) 100%);
-  border: 1px solid rgba(255,215,0,0.25);
-  border-radius: 28px;
-  padding: 32px 24px;
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 32px;
+  padding: 40px 28px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -266,92 +268,127 @@ body {
 }
 
 .price-card .label {
-  font-size: 0.85rem;
-  color: rgba(255,215,0,0.8);
+  font-size: 1rem;
+  color: rgba(255,215,0,0.85);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .price-card .value {
-  font-size: 3.2rem;
+  font-size: 4rem;         /* bigger price */
   font-weight: 900;
   color: #FFD700;
   letter-spacing: -0.02em;
 }
 
 .price-card .note {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  margin-top: 14px;
+  margin-top: 18px;
   font-weight: 500;
 }
 
 /* Row 4: Strategic Verdict */
 .verdict-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.06) 100%);
-  border-left: 6px solid var(--primary-accent);
-  padding: 34px 40px;
-  border-radius: 28px;
-  margin-top: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.07) 100%);
+  border-left: 7px solid var(--primary-accent);
+  padding: 42px 48px;
+  border-radius: 32px;
+  margin-top: 6px;
   backdrop-filter: blur(2px);
 }
 
 .verdict-card h3 {
   color: var(--primary-accent);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin-bottom: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
 .verdict-card p {
-  font-size: 1.5rem;
+  font-size: 1.7rem;      /* drastically bigger verdict text */
   font-weight: 550;
-  line-height: 1.4;
+  line-height: 1.45;
   color: #fff;
   letter-spacing: -0.2px;
 }
 
-/* Footer */
+/* Footer CTA */
 .footer-cta {
   border-top: 1px solid var(--border-subtle);
-  padding-top: 28px;
-  margin-top: 28px;
+  padding-top: 36px;
+  margin-top: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .cta-text { 
-  font-size: 1.1rem; 
-  font-weight: 500;
+  font-size: 1.3rem; 
+  font-weight: 600;
   color: rgba(255,255,255,0.9);
 }
 .cta-text strong { 
   color: var(--primary-accent);
-  background: rgba(255,255,255,0.05);
-  padding: 3px 12px;
+  background: rgba(255,255,255,0.08);
+  padding: 5px 16px;
   border-radius: 60px;
-  margin-left: 6px;
+  margin-left: 8px;
+  font-weight: 800;
 }
 .social-handle { 
-  font-size: 1rem; 
+  font-size: 1.15rem; 
   font-weight: 700; 
   color: #fff; 
-  opacity: 0.65;
-  letter-spacing: 0.5px;
+  opacity: 0.7;
+  letter-spacing: 0.8px;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
-  .card { padding: 36px 32px; width: 96%; }
-  .quick-stat-card .value { font-size: 1.6rem; }
-  .metric-card .value { font-size: 2.4rem; }
-  .verdict-card p { font-size: 1.25rem; }
+/* Responsive adjustments for large card scale (maintains readability on 1440p+) */
+@media (max-width: 1600px) {
+  .card {
+    width: 92%;
+    padding: 48px 52px 52px 52px;
+  }
+  .lang-pill {
+    font-size: 1.1rem;
+    padding: 10px 24px;
+  }
+  .metric-card .value {
+    font-size: 3.6rem;
+  }
+  .verdict-card p {
+    font-size: 1.5rem;
+  }
 }
+
+@media (max-width: 1300px) {
+  .card {
+    width: 96%;
+    padding: 40px 36px;
+  }
+  .quick-stat-card .value {
+    font-size: 2.2rem;
+  }
+  .lang-pill {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+  .metric-card .value {
+    font-size: 3rem;
+  }
+  .community-insight-card .score {
+    font-size: 3.8rem;
+  }
+  .price-card .value {
+    font-size: 3.2rem;
+  }
+}
+
 </style>
 </head>
 
@@ -420,7 +457,6 @@ body {
       <div class="price-card">
         <div class="label">💰 BRAND COLLABORATION</div>
         <div class="value" id="companyPrice">--</div>
-        <!-- <div class="note">1 Reel + Stories Package</div> -->
       </div>
     </div>
 
@@ -442,8 +478,7 @@ body {
 (function () {
   const params = new URLSearchParams(window.location.search);
   
-  // NO gender theme anymore — removed completely.
-  // Always use the neutral purple/indigo aesthetic. No pink/blue switching.
+  // Neutral dynamic: all styles based on purple/indigo/gold/teal, no gender theming.
 
   function setText(id, value) {
     const el = document.getElementById(id);
@@ -452,7 +487,7 @@ body {
     }
   }
 
-  // --- dynamic color utilities for metric cards (only for the two remaining cards) ---
+  // --- dynamic color utilities for metric cards (only for the two metric cards) ---
   function getViewRatioColor(vr) {
     const num = parseFloat(vr);
     if (num >= 100) return { color: "#10B981", status: "🚀 Viral Reach", bg: "#10B98108" };
@@ -496,18 +531,15 @@ body {
   const followers = params.get("followers") || "124K";
   const location = params.get("location") || "Mumbai";
   const category = params.get("category") || "Fashion & Beauty";
-  // gender param no longer used for theme, but we keep for potential info? Not displayed.
   const viewRatioRaw = params.get("viewRatio") || "187.45";
   const lvrRaw = params.get("lvr") || "5.91";
   const companyPriceRaw = params.get("companyPrice");
   
-  // Engagement is still used for Community Insight score if provided, otherwise derived
   const engagementRaw = params.get("engagement") || "4.82";
   const communityScoreRaw = params.get("commValue") || `${engagementRaw}%`;
   const communityInsightText = params.get("commInsight") || "";
   const strategicVerdictText = params.get("strategicVerdict") || "";
 
-  // Normalize numeric values
   const engagementNum = parseFloat(engagementRaw);
   const viewRatioNum = parseFloat(viewRatioRaw);
   const lvrNum = parseFloat(lvrRaw);
@@ -515,7 +547,7 @@ body {
   const viewRatioDisplay = isNaN(viewRatioNum) ? "230.99%" : `${viewRatioNum}%`;
   const lvrDisplay = isNaN(lvrNum) ? "1.15%" : `${lvrNum}%`;
 
-  // Set Quick Stats (only followers, location, category)
+  // Set Quick Stats
   setText("statFollowers", followers);
   setText("statLocation", location);
   setText("statCategory", category);
@@ -572,7 +604,7 @@ body {
     setText("companyPrice", `₹${Math.round(estimatedPrice).toLocaleString('en-IN')}`);
   }
 
-  // --- Languages Parsing (based on location and/or URL param)---
+  // --- Languages Parsing (improved readability and bigger pills)---
   const langs = params.get("languages");
   const container = document.getElementById("languageContainer");
   
@@ -599,7 +631,7 @@ body {
     const langArray = langs.split(",").map(l => l.trim());
     renderLanguagePills(langArray);
   } else {
-    // Smart defaults based on location
+    // Smart defaults based on location for broader representation
     let defaultLangSet = ["English", "Hindi"];
     const locLower = location.toLowerCase();
     if (locLower.includes("bangalore") || locLower.includes("bengaluru")) defaultLangSet = ["English", "Kannada", "Hindi"];
@@ -611,7 +643,7 @@ body {
     renderLanguagePills(defaultLangSet);
   }
 
-  // Ensure status texts are correctly populated for edge cases (no missing status)
+  // Ensure status texts are correctly populated for edge cases
   if (document.getElementById("viewRatioStatus").innerText === "--" && !isNaN(viewRatioNum)) {
     const colData = getViewRatioColor(viewRatioNum);
     const statusEl = document.getElementById("viewRatioStatus");
@@ -629,6 +661,8 @@ body {
     }
   }
 
+  // Additionally increase the visual presence of language pill text dynamically if needed (already bigger via CSS)
+  // Ensure any dynamic insight uses large line height
 })();
 </script>
 </body>
