@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Report Card | CreatorMesh</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-accent: #6366f1;
+  --secondary-accent: #a855f7;
+  --glow-color: rgba(147, 51, 234, 0.2);
+  --card-bg: #0B0813;
+  --border-glow: rgba(168, 85, 247, 0.25);
+  --text-white: #ffffff;
+  --text-dim: rgba(255,255,255,0.65);
+  --text-muted: rgba(255,255,255,0.4);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background:#0a0a0c;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  font-family:'Inter', sans-serif;
+  padding: 32px;
+}
+
+/* CARD FULL UTILIZATION */
+.card {
+  width:1220px;
+  height:auto;
+  min-height:1350px;
+  background: var(--card-bg);
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 52px 52px 52px;
+  transition: all 0.5s ease;
+  border-radius: 36px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8);
+}
+
+/* Enhanced glow for depth */
+.glow-bg {
+  position: absolute;
+  top: -200px;
+  right: -180px;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, var(--glow-color) 0%, rgba(0,0,0,0) 72%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.logo img {
+  width: 156px;
+  height: auto;
+  border-radius: 14px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  transition: transform 0.2s ease;
+}
+
+.report-badge {
+  background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  padding: 12px 28px;
+  border-radius: 60px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 6px 18px var(--border-glow);
+  backdrop-filter: blur(2px);
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 5;
+  flex: 1;
+}
+
+/* Row 1: Quick Stats (only 3 items: Followers, Location, Category) */
+.top-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.quick-stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 26px 16px;
+  text-align: center;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.quick-stat-card .label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.quick-stat-card .value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* Row 2: Languages + Core Metrics (2 cards: View-to-Follower + LVR) */
+.metrics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px;
+}
+
+.languages-compact {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.languages-compact .label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  margin-bottom: 14px;
+}
+
+.lang-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lang-pill {
+  background: rgba(255,255,255,0.1);
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  backdrop-filter: blur(2px);
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 28px;
+  padding: 32px 20px;
+  text-align: center;
+  transition: all 0.25s ease;
+  border-left: 5px solid;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.metric-card .label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-dim);
+}
+
+.metric-card .value {
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.metric-card .status {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Row 3: Community Insight + Price */
+.community-price-row {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 28px;
+}
+
+.community-insight-card {
+  background: rgba(0, 255, 206, 0.04);
+  border: 1px solid rgba(0, 255, 206, 0.2);
+  border-radius: 28px;
+  padding: 32px 34px;
+  transition: 0.2s;
+}
+
+.community-insight-card .label {
+  color: #00FFCE;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 14px;
+}
+
+.community-insight-card .score {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #00FFCE;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.community-insight-card .insight {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  font-weight: 450;
+}
+
+.price-card {
+  background: linear-gradient(135deg, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.02) 100%);
+  border: 1px solid rgba(255,215,0,0.25);
+  border-radius: 28px;
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.price-card .label {
+  font-size: 0.85rem;
+  color: rgba(255,215,0,0.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.price-card .value {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #FFD700;
+  letter-spacing: -0.02em;
+}
+
+.price-card .note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+  font-weight: 500;
+}
+
+/* Row 4: Strategic Verdict */
+.verdict-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.06) 100%);
+  border-left: 6px solid var(--primary-accent);
+  padding: 34px 40px;
+  border-radius: 28px;
+  margin-top: 8px;
+  backdrop-filter: blur(2px);
+}
+
+.verdict-card h3 {
+  color: var(--primary-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 18px;
+}
+
+.verdict-card p {
+  font-size: 1.5rem;
+  font-weight: 550;
+  line-height: 1.4;
+  color: #fff;
+  letter-spacing: -0.2px;
+}
+
+/* Footer */
+.footer-cta {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 28px;
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-text { 
+  font-size: 1.1rem; 
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+.cta-text strong { 
+  color: var(--primary-accent);
+  background: rgba(255,255,255,0.05);
+  padding: 3px 12px;
+  border-radius: 60px;
+  margin-left: 6px;
+}
+.social-handle { 
+  font-size: 1rem; 
+  font-weight: 700; 
+  color: #fff; 
+  opacity: 0.65;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .card { padding: 36px 32px; width: 96%; }
+  .quick-stat-card .value { font-size: 1.6rem; }
+  .metric-card .value { font-size: 2.4rem; }
+  .verdict-card p { font-size: 1.25rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="mainCard">
+  <div class="glow-bg"></div>
+
+  <div class="header">
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dq32mhbbt/image/upload/v1776751976/Untitled_900_x_1536_px_800_x_800_px_ntonbn.png" alt="CreatorMesh" />
+    </div>
+    <div class="report-badge" id="reportIdBadge">REPORT: #018</div>
+  </div>
+
+  <div class="main-layout">
+    
+    <!-- Row 1: ONLY Followers, Location, Category -->
+    <div class="top-row">
+      <div class="quick-stats">
+        <div class="quick-stat-card">
+          <div class="label">👥 FOLLOWERS</div>
+          <div class="value" id="statFollowers">--</div>
+        </div>
+        <div class="quick-stat-card">
+          <div class="label">📍 LOCATION</div>
+          <div class="value" id="statLocation">--</div>
+        </div>
+        <div class="quick-stat-card">
+          <div class="label">🏷️ CATEGORY</div>
+          <div class="value" id="statCategory">--</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Languages + View-to-Follower + Like-to-View (LVR) ONLY -->
+    <div class="metrics-row">
+      <div class="languages-compact">
+        <div class="label">🌐 LANGUAGES SPOKEN</div>
+        <div class="lang-pills" id="languageContainer">
+          <span class="lang-pill">English</span>
+        </div>
+      </div>
+
+      <div class="metric-card" id="viewRatioCard">
+        <div class="label">👁️ VIEW-TO-FOLLOWER</div>
+        <div class="value" id="viewRatioValue">--</div>
+        <div class="status" id="viewRatioStatus">--</div>
+      </div>
+
+      <div class="metric-card" id="lvrCard">
+        <div class="label">❤️ LIKE-TO-VIEW (LVR)</div>
+        <div class="value" id="lvrValue">--</div>
+        <div class="status" id="lvrStatus">--</div>
+      </div>
+    </div>
+
+    <!-- Row 3: Community Insight + Price -->
+    <div class="community-price-row">
+      <div class="community-insight-card">
+        <div class="label">📊 COMMUNITY INSIGHT</div>
+        <div class="score" id="commScore">--</div>
+        <div class="insight" id="commInsight">Loading community insight...</div>
+      </div>
+      
+      <div class="price-card">
+        <div class="label">💰 BRAND COLLABORATION</div>
+        <div class="value" id="companyPrice">--</div>
+        <!-- <div class="note">1 Reel + Stories Package</div> -->
+      </div>
+    </div>
+
+    <!-- Row 4: Strategic Verdict -->
+    <div class="verdict-card">
+      <h3>🎯 STRATEGIC VERDICT</h3>
+      <p id="strategicVerdict">Loading strategic verdict...</p>
+    </div>
+
+  </div>
+
+  <div class="footer-cta">
+    <div class="cta-text">Book Creator <strong id="ctaId">#018</strong> for your next campaign</div>
+    <div class="social-handle">@creatormesh.india</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  
+  // NO gender theme anymore — removed completely.
+  // Always use the neutral purple/indigo aesthetic. No pink/blue switching.
+
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el && value !== undefined && value !== null && value !== "") {
+      el.innerText = value;
+    }
+  }
+
+  // --- dynamic color utilities for metric cards (only for the two remaining cards) ---
+  function getViewRatioColor(vr) {
+    const num = parseFloat(vr);
+    if (num >= 100) return { color: "#10B981", status: "🚀 Viral Reach", bg: "#10B98108" };
+    if (num >= 50) return { color: "#F59E0B", status: "👁️ Strong Visibility", bg: "#F59E0B08" };
+    if (num >= 20) return { color: "#F59E0B", status: "🔍 Good Discovery", bg: "#F59E0B08" };
+    return { color: "#EF4444", status: "🎯 Niche Focus", bg: "#EF444408" };
+  }
+
+  function getLVRColor(lvr) {
+    const num = parseFloat(lvr);
+    if (num >= 8) return { color: "#10B981", status: "💎 Elite Impact", bg: "#10B98108" };
+    if (num >= 4) return { color: "#F59E0B", status: "❤️ Strong Appeal", bg: "#F59E0B08" };
+    if (num >= 2) return { color: "#F59E0B", status: "✨ Solid Conversion", bg: "#F59E0B08" };
+    return { color: "#EF4444", status: "📌 Initial Traction", bg: "#EF444408" };
+  }
+
+  function applyMetricStyle(cardId, value, colorFunction, valueElementId, statusElementId) {
+    const card = document.getElementById(cardId);
+    const valueEl = document.getElementById(valueElementId);
+    const statusEl = document.getElementById(statusElementId);
+    const num = parseFloat(value);
+    
+    if (card && valueEl && !isNaN(num)) {
+      const colorData = colorFunction(num);
+      card.style.borderLeftColor = colorData.color;
+      card.style.background = `linear-gradient(135deg, ${colorData.color}0c 0%, rgba(255,255,255,0.01) 100%)`;
+      valueEl.style.color = colorData.color;
+      if (statusEl) {
+        statusEl.style.color = colorData.color;
+        statusEl.innerText = colorData.status;
+      }
+    }
+  }
+
+  // Creator ID
+  const creatorId = params.get("id") || "018";
+  setText("reportIdBadge", `REPORT: #${creatorId}`);
+  setText("ctaId", `#${creatorId}`);
+
+  // --- Values from URL or defaults ---
+  const followers = params.get("followers") || "124K";
+  const location = params.get("location") || "Mumbai";
+  const category = params.get("category") || "Fashion & Beauty";
+  // gender param no longer used for theme, but we keep for potential info? Not displayed.
+  const viewRatioRaw = params.get("viewRatio") || "187.45";
+  const lvrRaw = params.get("lvr") || "5.91";
+  const companyPriceRaw = params.get("companyPrice");
+  
+  // Engagement is still used for Community Insight score if provided, otherwise derived
+  const engagementRaw = params.get("engagement") || "4.82";
+  const communityScoreRaw = params.get("commValue") || `${engagementRaw}%`;
+  const communityInsightText = params.get("commInsight") || "";
+  const strategicVerdictText = params.get("strategicVerdict") || "";
+
+  // Normalize numeric values
+  const engagementNum = parseFloat(engagementRaw);
+  const viewRatioNum = parseFloat(viewRatioRaw);
+  const lvrNum = parseFloat(lvrRaw);
+  
+  const viewRatioDisplay = isNaN(viewRatioNum) ? "230.99%" : `${viewRatioNum}%`;
+  const lvrDisplay = isNaN(lvrNum) ? "1.15%" : `${lvrNum}%`;
+
+  // Set Quick Stats (only followers, location, category)
+  setText("statFollowers", followers);
+  setText("statLocation", location);
+  setText("statCategory", category);
+
+  // Set metric values
+  setText("viewRatioValue", viewRatioDisplay);
+  setText("lvrValue", lvrDisplay);
+
+  // Apply dynamic styles to View Ratio and LVR cards
+  if (!isNaN(viewRatioNum)) applyMetricStyle("viewRatioCard", viewRatioNum, getViewRatioColor, "viewRatioValue", "viewRatioStatus");
+  if (!isNaN(lvrNum)) applyMetricStyle("lvrCard", lvrNum, getLVRColor, "lvrValue", "lvrStatus");
+
+  // --- Community Insight Block (score + insight)---
+  const communityScoreFinal = communityScoreRaw.includes('%') ? communityScoreRaw : `${communityScoreRaw}%`;
+  setText("commScore", communityScoreFinal);
+  
+  if (communityInsightText && communityInsightText.trim() !== "") {
+    setText("commInsight", communityInsightText);
+  } else {
+    let insightMsg = `A ${category.toLowerCase()} community in ${location} with ${engagementNum}% engagement, reflecting authentic interest in premium brand collaborations. High trust index.`;
+    if (viewRatioNum > 100) insightMsg = `🔥 Viral momentum! ${location}'s top creator with ${viewRatioNum}% view ratio — audience actively shares content, ideal for high-reach D2C campaigns.`;
+    else if (lvrNum > 6) insightMsg = `💎 Ultra-loyal community: ${lvrNum}% like-to-view ratio shows deep resonance. Perfect for storytelling & brand loyalty programs.`;
+    else if (engagementNum > 3.5) insightMsg = `📈 Solid engagement (${engagementNum}%) combined with metro location (${location}) drives premium brand recall. Audience highly responsive.`;
+    setText("commInsight", insightMsg);
+  }
+
+  // --- Strategic Verdict ---
+  if (strategicVerdictText && strategicVerdictText.trim() !== "") {
+    setText("strategicVerdict", strategicVerdictText);
+  } else {
+    let verdict = `${location}-based creator delivering ${viewRatioNum}% view ratio with ${engagementNum}% engagement — ideal for lifestyle, D2C & digital-first brands targeting India's affluent young audience.`;
+    if (viewRatioNum > 150) verdict = `📢 BREAKTHROUGH ALERT: ${location}'s high-velocity creator reaches ${viewRatioNum}% view-to-follower ratio. Strategic fit for product launches & festival campaigns.`;
+    else if (lvrNum > 7) verdict = `🏆 Top 5% in LVR! Exceptional like conversion of ${lvrNum}% drives emotional connection. Brands seeking advocacy & UGC will see outstanding ROI.`;
+    else if (engagementNum >= 4) verdict = `🎯 PERFORMANCE POWERHOUSE: ${engagementNum}% engagement + metro influence in ${location}. Commanding presence for beauty, tech & fashion narratives.`;
+    setText("strategicVerdict", verdict);
+  }
+
+  // --- Brand Collaboration Price (dynamic smart pricing)---
+  if (companyPriceRaw && !isNaN(parseFloat(companyPriceRaw))) {
+    const priceNum = parseInt(companyPriceRaw);
+    const formattedPrice = `₹${priceNum.toLocaleString('en-IN')}`;
+    setText("companyPrice", formattedPrice);
+  } else if (companyPriceRaw && companyPriceRaw !== "") {
+    setText("companyPrice", companyPriceRaw);
+  } else {
+    let estimatedPrice = 45000;
+    const followerNum = typeof followers === 'string' ? parseFloat(followers.replace(/[^0-9.]/g, '')) : 50;
+    const followerVal = isNaN(followerNum) ? 50 : (followers.includes('K') ? followerNum * 1000 : followerNum);
+    if (followerVal > 200000) estimatedPrice = 185000;
+    else if (followerVal > 80000) estimatedPrice = 89000;
+    else if (followerVal > 30000) estimatedPrice = 54000;
+    else estimatedPrice = 35000;
+    if (engagementNum > 6) estimatedPrice = estimatedPrice * 1.4;
+    setText("companyPrice", `₹${Math.round(estimatedPrice).toLocaleString('en-IN')}`);
+  }
+
+  // --- Languages Parsing (based on location and/or URL param)---
+  const langs = params.get("languages");
+  const container = document.getElementById("languageContainer");
+  
+  function renderLanguagePills(langArray) {
+    container.innerHTML = "";
+    langArray.forEach(lang => {
+      const trimmed = lang.trim();
+      if(trimmed) {
+        const pill = document.createElement("span");
+        pill.className = "lang-pill";
+        pill.innerText = trimmed;
+        container.appendChild(pill);
+      }
+    });
+    if (container.children.length === 0) {
+      const pill = document.createElement("span");
+      pill.className = "lang-pill";
+      pill.innerText = "English";
+      container.appendChild(pill);
+    }
+  }
+
+  if (langs && langs.trim() !== "") {
+    const langArray = langs.split(",").map(l => l.trim());
+    renderLanguagePills(langArray);
+  } else {
+    // Smart defaults based on location
+    let defaultLangSet = ["English", "Hindi"];
+    const locLower = location.toLowerCase();
+    if (locLower.includes("bangalore") || locLower.includes("bengaluru")) defaultLangSet = ["English", "Kannada", "Hindi"];
+    else if (locLower.includes("mumbai") || locLower.includes("delhi") || locLower.includes("ncr")) defaultLangSet = ["English", "Hindi"];
+    else if (locLower.includes("kolkata")) defaultLangSet = ["English", "Bengali"];
+    else if (locLower.includes("chennai")) defaultLangSet = ["English", "Tamil"];
+    else if (locLower.includes("hyderabad")) defaultLangSet = ["English", "Telugu", "Urdu"];
+    else if (locLower.includes("pune")) defaultLangSet = ["English", "Marathi", "Hindi"];
+    renderLanguagePills(defaultLangSet);
+  }
+
+  // Ensure status texts are correctly populated for edge cases (no missing status)
+  if (document.getElementById("viewRatioStatus").innerText === "--" && !isNaN(viewRatioNum)) {
+    const colData = getViewRatioColor(viewRatioNum);
+    const statusEl = document.getElementById("viewRatioStatus");
+    if(statusEl) {
+      statusEl.innerText = colData.status;
+      statusEl.style.color = colData.color;
+    }
+  }
+  if (document.getElementById("lvrStatus").innerText === "--" && !isNaN(lvrNum)) {
+    const colData = getLVRColor(lvrNum);
+    const statusEl = document.getElementById("lvrStatus");
+    if(statusEl) {
+      statusEl.innerText = colData.status;
+      statusEl.style.color = colData.color;
+    }
+  }
+
+})();
+</script>
+</body>
+</html>
